@@ -44,7 +44,15 @@ controller.eliminar=(req,res)=>{
 
 }
 controller.actualizar=(req,res)=>{
- 
+    req.getConnection((err,conn)=>{
+
+        conn.query('SELECT count(mr.MUNICIPIO) as TOTAL FROM covid19_mexico cm LEFT JOIN municipios mr ON cm.MUNICIPIO_RES=mr.CLAVE_MUNICIPIO WHERE mr.MUNICIPIO = "IZTAPALAPA";',(err,datos2)=>{
+           if(err){
+               res.json(err);
+           }
+           console.log(datos2);
+       });
+   });
 }
 
     module.exports = controller;
