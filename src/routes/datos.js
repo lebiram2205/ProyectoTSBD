@@ -1,12 +1,21 @@
-
-const router = require('express').Router();
+const express = require('express');
+const app=express.Router();
 
 const datosController =require('../controllers/datosController')
-router.get('/', datosController.list);
-router.post('/add',datosController.guardar);
-router.get('/eliminar/:id_DUsuario',datosController.eliminar);
-router.get('/actualizar',datosController.actualizar);
-module.exports = router;
+app.get('/', datosController.list);
+app.post('/add',datosController.guardar);
+app.get('/eliminar/:id_DUsuario',datosController.eliminar);
+app.get('/actualizar/HOLA',datosController.actualizar);
+app.get('/casosPositivosEF',datosController.casosPositivosEF);
+
+app.get('/casosPositivosMEF',datosController.casosPositivosMEF);
+app.get('/casosPositivosHEF',datosController.casosPositivosHEF);
+app.get('/defuncionesEF',datosController.defuncionesEF);
+app.get('/defuncionesMEF',datosController.defuncionesMEF);
+app.get('/defuncionesHEF',datosController.defuncionesHEF);
+
+
+module.exports = app;
 
 
 

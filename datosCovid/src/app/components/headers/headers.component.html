@@ -8,10 +8,11 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 </head>
 <body> 
-    <nav class="navbar navbar-dark bg-dark">
-        <a href="/" class="navbar-brand">DATOS</a>
-        <a href="/actualizar" class="navbar-brand">Estadisticas</a>
-        <a href="/#" class="navbar-brand">Realizar Cuestionario</a>
+    <nav class="navbar navbar-default navbar-dark bg-dark">
+        <a href="/" class="navbar-brand">Informacion</a>
+        <a href="/" class="navbar-brand" [routerLink]="['chart']"> Estadisticas</a>
+        <a href="/" class="navbar-brand"  [routerLink]="['test']"> Realizar Cuestionario</a>
+        <a href="/" class="navbar-brand"  [routerLink]="['contacto']" >Contactacto</a>
     </nav>
-    
-
+</body>
+</html>
