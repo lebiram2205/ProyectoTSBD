@@ -35,30 +35,32 @@
           
       </div>
       <div class="col-7">
-          <!-- <table class="table">
+          <table class="table">
               <thead>
                   <th>Nombre</th>
-                  <th>Cargo</th>
-                  <th>Lugar</th>
+                  <th>Sexo</th>
+                  <th>fecha</th>
+                  <th>email</th>
                   <th>Operaciones</th>
               </thead>
               <tbody>
-                  <tr *ngFor="let employee of employeeS.employees">
-                  <td>{{employee.name}}</td>
-                  <td>{{employee.position}}</td>
-                  <td>{{employee.office}}</td>
+                  <tr *ngFor="let contacto of contactoServiceU.contacto">
+                  <td>{{contacto.nombre}}</td>
+                  <td>{{contacto.sexo}}</td>
+         
+                
                   <td>
-                      <a (click)="updateEmployees(employee)" class="btn btn-primary " type="button">
+                      <!-- <a (click)="updateEmployees(employee)" class="btn btn-primary " type="button">
                           editar
                       </a>
                       <a (click)="delateEmployees(employee._id)" class="btn btn-primary " type="button">
                           borrar
-                      </a>
+                      </a> -->
 
                   </td>
                   </tr>
               </tbody>
-          </table> -->
+          </table>
       </div>
   </div>
 </div>

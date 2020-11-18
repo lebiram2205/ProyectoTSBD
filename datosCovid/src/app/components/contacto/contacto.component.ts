@@ -20,6 +20,7 @@ export class ContactoComponent implements OnInit {
     
    }
    ngOnInit(): void {
+    this.getContacto();
   }
   private buildForm() {
    this.form = this.formBuilder.group({
@@ -46,6 +47,9 @@ save(event: Event) {
     // })  
   }
 
+}
+getContacto(){
+  this.contactoServiceU.getContacto();//nos trae contacto
 }
  
 

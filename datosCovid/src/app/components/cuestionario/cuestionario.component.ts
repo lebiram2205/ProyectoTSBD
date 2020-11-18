@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from "@angular/forms";
-import { ContactoService } from "../../services/contacto.service";
+import { TestService } from "../../services/test.service";
+
 import Swal from 'sweetalert2';
 @Component({
   selector: 'app-cuestionario',
   templateUrl: './cuestionario.component.html',
   styleUrls: ['./cuestionario.component.css'],
-  providers:[ContactoService]
+  providers:[TestService]
 })
 export class CuestionarioComponent implements OnInit {
   form: FormGroup;// la variable con la que yo estoy trabajando para mi formulario
-  contactoServiceU : ContactoService;
-  constructor(private formBuilder:FormBuilder, private contactoService:ContactoService) { 
+  testServiceU : TestService;
+  constructor(private formBuilder:FormBuilder, private contactoService: TestService) { 
     this.buildForm();
-    this.contactoServiceU = contactoService ;
+    this. testServiceU = contactoService ;
   }
 
   ngOnInit(): void {
@@ -45,7 +46,7 @@ export class CuestionarioComponent implements OnInit {
     //event.preventDefault();//cancelo su comportamiento por defecto y evito que haga una recarga de la pagina 
     if(this.form.valid){
       const value = this.form.value;
-      this.contactoServiceU.postTest(this.form.value).subscribe(
+      this. testServiceU.postTest(this.form.value).subscribe(
         Response=>console.log(Response),
         err=>console.log(err)
        );
