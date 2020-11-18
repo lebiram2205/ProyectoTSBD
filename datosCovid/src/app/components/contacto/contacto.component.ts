@@ -49,6 +49,7 @@ save(event: Event) {
 
 }
 getContacto(){
+  
   this.contactoServiceU.getContacto();//nos trae contacto
 }
  

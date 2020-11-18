@@ -10,6 +10,7 @@ import Swal from 'sweetalert2';
   providers:[TestService]
 })
 export class CuestionarioComponent implements OnInit {
+  
   form: FormGroup;// la variable con la que yo estoy trabajando para mi formulario
   testServiceU : TestService;
   constructor(private formBuilder:FormBuilder, private contactoService: TestService) { 
@@ -51,44 +52,28 @@ export class CuestionarioComponent implements OnInit {
         err=>console.log(err)
        );
 
-
-      
-      // console.log(value);
-      // console.log(value.pregunta1);
-      // if(value.pregunta1=="si")
-      // Swal.fire({
-      //             position: 'top-end',
-      //             icon: 'success',
-      //             title: 'Es posible que tenga COVID',
-      //             showConfirmButton: true
-      //           })
-      Swal.fire({
-        title: 'Atencion',
-        text: "Es posible que tenga COVID",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
+      if(value.pregunta1=="si" || value.pregunta2=="si" || value.pregunta3=="si" || value.pregunta4=="si" || value.pregunta5=="si" || value.pregunta6=="si" || value.pregunta7=="si" ){
+        Swal.fire({
+          title: 'Atencion',
+          text: "¡Es posible que tenga COVID! CONSULTE A SU MEDICO",
+          icon: 'warning',
+          confirmButtonColor: '#3085d6',
   
-
-      })  
-
+        })  
+      }
+      else {
+        Swal.fire({
+          title: 'Precaucion',
+          text: "¡Es posible que tenga COVID!",
+          icon: 'warning',
+          confirmButtonColor: '#3085d6',
+  
+        })
+      
+      }
 
     }
  
   }
 
 }
-// this.employeeS.postEmployee(form.value)
-//       .subscribe(res=>{
-  
-//         this.resetForm(form);
-//         Swal.fire({
-//           position: 'top-end',
-//           icon: 'success',
-//           title: 'Empleado Guardado',
-//           showConfirmButton: false,
-//           timer: 3000
-//         })
-//         this.getEmployees();//cuando guardamos un dato nos devolvera el dato actualizado
-//       })
-//     }}
