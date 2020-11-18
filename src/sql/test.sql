@@ -1,0 +1,15 @@
+CREATE TABLE TEST( 
+id_test INT NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+nombre VARCHAR(100), 
+fecha VARCHAR(100), 
+residencia VARCHAR(100), 
+pregunta1 VARCHAR(100), 
+pregunta2 VARCHAR(100), 
+pregunta3 VARCHAR(100), 
+pregunta4 VARCHAR(100), 
+pregunta5 VARCHAR(100), 
+pregunta6 VARCHAR(100),
+pregunta7 VARCHAR(100), 
+pregunta8 VARCHAR(100), 
+pregunta9 VARCHAR(100), 
+pregunta10 VARCHAR(100))

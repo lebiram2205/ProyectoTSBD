@@ -1,0 +1,15 @@
+{
+"nombre":"Carlitos",
+"fecha":"2020-11-16",
+"residencia":"CDMX",
+"pregunta1":"si",
+"pregunta2":"si",
+"pregunta3":"si",
+"pregunta4":"si",
+"pregunta5":"si",
+"pregunta6":"si",
+"pregunta7":"si",
+"pregunta8":"si",
+"pregunta9":"si",
+"pregunta10":"si"
+}

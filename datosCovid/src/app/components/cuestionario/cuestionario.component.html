@@ -1,35 +1,111 @@
 <div class="container">
-    <div class="row mt-5">
-        <div class="col-md-7">
-        <table class="table tlable-botdered table-hover">
-            <thead>
-            <tr>
+            <h1>Realiza test de valoracion </h1>
+            <form [formGroup]="form" (ngSubmit)="save($event)">
+                <p>
+                  <label>Escribe tu nombre</label>
+                  <input class="form-control" type="text" formControlName="nombre" placeholder="Escribe el Nombre">
+                </p>
+                <p>
+                  <label>Seleccione la fecha</label>
+                  <input class="form-control"  type="date" formControlName="fecha"placeholder="Selecciona la fecha">
+                </p>
+             
+                <p>
+                  <label>Cual es tu lugar de recidencia</label>
+                  <select class="form-control" formControlName="residencia">
+                    <option value="Aguascalientes"> Aguascalientes</option>
+                    <option value="BajaCaliforniaSur"> Baja California Sur</option>
+                    <option value="Campeche"> Campeche  </option>
+                    <option value="Chihuahua"> Chihuahua</option>
+                    <option value="Chiapas"> Chiapas</option>
+                    <option value="Coahuila"> Coahuila de Zaragoza</option> 
+                    <option value="Colima"> Colima</option>
+                    <option value="Durango"> Durango</option>
+                    <option value="Guanajuato"> Guanajuato</option>
+                    <option value="Guerrero"> Guerrero</option>
+                    <option value="Hidalgo"> Hidalgo</option>
+                    <option value="Jalisco"> Jalisco</option>
+                    <option value="EDOMEX"> Estado de México</option>
+                    <option value="Michoacán"> Michoacán de Ocampo</option>
+                    <option value="Morelos"> Morelos</option>
+                    <option value="Nayarit"> Nayarit</option>
+                    <option value="NuevoLeon"> Nuevo León</option>
+                    <option value="Oaxaca"> Oaxaca</option>
+                    <option value="Puebla"> Puebla</option>
+                    <option value="Querétaro"> Querétaro</option>
+                    <option value="QuintanaRoo"> Quintana Roo</option>
+                    <option value="SLPotosi"> San Luis Potosí</option>
+                    <option value="Sinaloa"> Sinaloa</option>
+                    <option value="Sonora"> Sonora</option>
+                    <option value="Tabasco"> Tabasco</option>
+                    <option value="Tamaulipas"> Tamaulipas</option>
+                    <option value="Tlaxcala"> Tlaxcala</option>
+                    <option value="Veracruz"> Veracruz</option>
+                    <option value="Yucatán"> Yucatán</option>
+                    <option value="Zacatecas"> Zacatecas</option>
+                    <option value="CDMX"> Ciudad de México</option>
+                    <option value="BajaCaifornia"> Baja California </option>
 
-            </tr>
-                <th>numero</th>
-                <th>Nombre</th>
-                <th>Sexo</th>
-                <th>Acciones</th>
-            </thead>
-            <tbody>
-               
-            </tbody>
-        </table>
+                  </select>
+                </p>
+             
+                  <label><h3>Contesta las siguientes preguntas: </h3></label>
+                  
+                  <div class="form-group form-check">
+                    <label>¿En los últimos 7 días ha tenido contacto con personas que viven fuera de su hogar y con una distancia menor a 2 metros? </label><br>
+                    <input type="radio" name="pregunta1" formControlName="pregunta1" value="si">Si<br>
+                    <input type="radio" name="pregunta1" formControlName="pregunta1" value="no">No<br>
+                  </div>
 
-        </div>
-        <div class="col-md-5">
-            <form action="/add" method="post">
-                <div class="form-group">
-                    <input type="text" name="nombre" placeholder="Name" class="form-control" autofocus>
-                </div>
-                <div class="form-group">
-                    <input type="text" name="sexo" placeholder="Sexo" class="form-control">
-                </div>
-             <button type="submit" class="btn btn-primary">Terminar Formulario</button>
+                  <div class="form-group form-check">
+                    <label>¿En las últimas semanas, ha tenido contacto cercano con alguien que está actualmente infectado de coronavirus?</label><br>
+                    <input type="radio" name="pregunta2" formControlName="pregunta2" value="si">Si<br>
+                    <input type="radio" name="pregunta2" formControlName="pregunta2" value="no">No<br>
+                  </div>
+                  <div class="form-group form-check">
+                    <label>Sufre dolores de cabeza?</label><br>
+                    <input type="radio" name="pregunta3" formControlName="pregunta3" value="si">Si<br>
+                    <input type="radio" name="pregunta3" formControlName="pregunta3" value="no">No<br>
+                  </div>
+                  <div class="form-group form-check">
+                    <label>Problemas para respirar?</label><br>
+                    <input type="radio" name="pregunta4" formControlName="pregunta4" value="si">Si<br>
+                    <input type="radio" name="pregunta4" formControlName="pregunta4" value="no">No<br>
+                  </div>
+                  <div class="form-group form-check">
+                    <label>¿Ha tenido tos en los últimos días? </label><br>
+                    <input type="radio" name="pregunta5" formControlName="pregunta5" value="si">Si<br>
+                    <input type="radio" name="pregunta5" formControlName="pregunta5" value="no">No<br>
+                  </div>
+                  <div class="form-group form-check">
+                    <label>Dolor en articulaciones?</label><br>
+                    <input type="radio" name="pregunta6" formControlName="pregunta6" value="si">Si<br>
+                    <input type="radio" name="pregunta6" formControlName="pregunta6" value="no">No<br>
+                  </div>
+                  <div class="form-group form-check">
+                    <label>Cuerpo cortado? </label><br>
+                    <input type="radio" name="pregunta7" formControlName="pregunta7" value="si">Si<br>
+                    <input type="radio" name="pregunta7" formControlName="pregunta7" value="no">No<br>
+                  </div>
+                  <div class="form-group form-check">
+                    <label>Fiebre? </label><br>
+                    <input type="radio" name="pregunta8" formControlName="pregunta8" value="si">Si<br>
+                    <input type="radio" name="pregunta8" formControlName="pregunta8" value="no">No<br>
+                  </div>
+                  <div class="form-group form-check">
+                    <label>Pérdida de olfato y gusto?</label><br>
+                    <input type="radio" name="pregunta9" formControlName="pregunta9" value="si">Si<br>
+                    <input type="radio" name="pregunta9" formControlName="pregunta9" value="no">No<br>
+                  </div>
+                  <div class="form-group form-check">
+                    <label>¿Cree que las medidas adoptadas por el gobierno son suficientes para enfrentar la pandemia de coronavirus?</label><br>
+                    <input type="radio" name="pregunta10" formControlName="pregunta10" value="si">Si<br>
+                    <input type="radio" name="pregunta10" formControlName="pregunta10" value="no">No<br>
+                  </div>
+                <button type="submit" class="btn btn-primary" >Consultar</button> 
+              </form>
+       
 
-            </form>
-        </div>
-
-    </div>
+  
 
 </div>

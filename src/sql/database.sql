@@ -12,3 +12,5 @@ CREATE TABLE DATOS_USUARIOS(
 DESCRIBE DATOS_USUARIOS;
 INSERT INTO DATOS_USUARIOS(nombre,sexo)VALUES('Mi nombre', 'f');
 SELECT * FROM DATOS_USUARIOS;
+
+INSERT INTO `test` (`nombre`, `fecha`, `residencia`, `pregunta1`, `pregunta2`, `pregunta3`, `pregunta4`, `pregunta5`, `pregunta6`, `pregunta7`, `pregunta8`, `pregunta9`, `pregunta10`) VALUES ('', '', '', '', '', '', '', '', '', '', '', '', '')

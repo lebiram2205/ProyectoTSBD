@@ -10,6 +10,7 @@ export class ChartService {
 
   constructor(private http:HttpClient) { }
   
+
   getcasosPositivosEF(){
       return this.http.get(this.URL_API +'/casosPositivosEF');
   }

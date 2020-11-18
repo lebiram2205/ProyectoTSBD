@@ -1,1 +1,64 @@
-<p>contacto works!</p>
+
+<div class="container">
+  <div class="row">
+      <div class="col-5">
+
+          <div class="card">
+              <div class="card-header"><h5>Contactos Pendientes</h5></div>
+              <div class="card-body">
+                <form [formGroup]="form" (ngSubmit)="save($event)">
+                    <p>
+                        <label>Escribe tu nombre</label>
+                        <input class="form-control" type="text" formControlName="nombre" placeholder="Escribe el Nombre">
+                      </p>
+                    <p>
+                    <div class="form-group form-check">
+                    <label>Sexo </label><br>
+                    <input type="radio" name="sexo" formControlName="sexo" value="femenino">   femenino 
+                    <input type="radio" name="sexo" formControlName="sexo" value="masculino">   Masculino 
+                    <input type="radio" name="sexo" formControlName="sexo" value="otro">   Otro
+                    </div>
+                   
+                    <p>
+                      <label> email </label>
+                      <input class="form-control" type="email" formControlName="email">
+                    </p>
+                    <p>
+                      <label> Comentario </label>
+                      <textarea class="form-control" cols="30" rows="10" formControlName="comentario"></textarea>
+                    </p>
+                    <button type="submit" class="btn btn-primary" >Consultar</button> 
+                  </form>
+
+              </div>
+            </div>
+          
+      </div>
+      <div class="col-7">
+          <!-- <table class="table">
+              <thead>
+                  <th>Nombre</th>
+                  <th>Cargo</th>
+                  <th>Lugar</th>
+                  <th>Operaciones</th>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let employee of employeeS.employees">
+                  <td>{{employee.name}}</td>
+                  <td>{{employee.position}}</td>
+                  <td>{{employee.office}}</td>
+                  <td>
+                      <a (click)="updateEmployees(employee)" class="btn btn-primary " type="button">
+                          editar
+                      </a>
+                      <a (click)="delateEmployees(employee._id)" class="btn btn-primary " type="button">
+                          borrar
+                      </a>
+
+                  </td>
+                  </tr>
+              </tbody>
+          </table> -->
+      </div>
+  </div>
+</div>

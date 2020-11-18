@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { HeadersComponent } from './components/headers/headers.component';
 import { ChartsComponent } from './components/charts/charts.component';
@@ -17,11 +17,12 @@ import{ FormsModule} from '@angular/forms';
 import{ ReactiveFormsModule} from '@angular/forms';
 
 import { ChartService } from "./services/chart.service";
+import {ContactoService} from "./services/contacto.service"
 import { CuestionarioComponent } from './components/cuestionario/cuestionario.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,13 +33,15 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     APP_ROUTING,
     HttpClientModule,
     ChartsModule,
-    SweetAlert2Module
+    FormsModule,
+    SweetAlert2Module,
+    NgbModule,
+    ReactiveFormsModule
   ],
-  providers: [ChartService],
+  providers: [ChartService,ContactoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

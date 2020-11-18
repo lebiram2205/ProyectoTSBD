@@ -26,7 +26,7 @@ app.use(myConnection(mysql,{
 },'single'));
 app.use(express.urlencoded({extended: false}));//permitir entender los datos del formulario
 
-app.use('/',require('./routes/datos'));
+app.use('/',require('./routes/datos.routes'));
 
 app.use(express.static(path.join(__dirname,'public')))
 app.use(express.static(path.join(__dirname,'views')))

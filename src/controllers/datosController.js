@@ -1,27 +1,45 @@
+const { request } = require("express");
 const controller={};
 
 controller.list=  (req,res)=>{
     req.getConnection((err,conn)=>{
-         conn.query('SELECT * FROM DATOS_USUARIOS',(err,datos)=>{
+         conn.query('SELECT * FROM CONTACTO',(err,datos)=>{
             if(err){
                 res.json(err);
             }
-            console.log(datos);
+            res.json(datos)
         });
     });
-    };
+};
 controller.guardar=(req,res)=>{
-    const data =req.body ;
-    const data2={nombre:'Ricardo',sexo:'m'}
+    const data =req.body;
     req.getConnection((err,conn)=>{
         console.log(req.body);
-        // const query=conn.query('INSERT INTO DATOS_USUARIOS(nombre,sexo)VALUES (?)', data, (err, datos) => {
-            conn.query('INSERT INTO DATOS_USUARIOS set ?', [data], (err, datos) => {
+
+            conn.query('INSERT INTO CONTACTO set ?',[data], (err, datos) => {
             if(err){
                 res.json(err);
             }
-                console.log(datos)
-                  res.redirect('/')
+            res.json({
+                'status':'Contacto guardado'
+            });
+               
+ 
+       });
+   });
+}
+controller.guardarTest=(req,res)=>{
+    const data =req.body ;
+    req.getConnection((err,conn)=>{
+        
+        // const query=conn.query('INSERT INTO DATOS_USUARIOS(nombre,sexo)VALUES (?)', data, (err, datos) => {
+            conn.query('INSERT INTO TEST set ?',[data], (err, datos) => {
+            if(err){
+                res.json(err);
+            }
+            res.json({
+                'status':'test guardado'
+            });
                
  
        });
@@ -139,4 +157,30 @@ controller.defuncionesHEF=async (req,res)=>{
        });
    });
 }
+
+controller.casosPositivosA=async (req,res)=>{
+
+    req.getConnection((err,conn)=>{
+
+         conn.query('SELECT mun.MUNICIPIO AS ALCALDIA, COUNT(*) AS CASOS_POSITIVOS FROM covid19_mexico cm LEFT JOIN municipios mun ON cm.MUNICIPIO_RES=mun.CLAVE_MUNICIPIO AND CLAVE_ENTIDAD  = "09" WHERE cm.RESULTADO_LAB = "1" AND cm.ENTIDAD_RES = "09" GROUP BY ALCALDIA ORDER BY mun.CLAVE_MUNICIPIO;',(err,datos3)=>{
+           if(err){
+               res.json(err);
+           }
+           res.json(datos3)
+       });
+   });
+}
+controller.casosPositivosMA=async (req,res)=>{
+
+    req.getConnection((err,conn)=>{
+
+         conn.query('SELECT mun.MUNICIPIO AS ALCALDIA, COUNT(*) AS CASOS_POSITIVOS FROM covid19_mexico cm LEFT JOIN municipios mun ON cm.MUNICIPIO_RES=mun.CLAVE_MUNICIPIO AND mun.CLAVE_ENTIDAD  = "09" WHERE cm.RESULTADO_LAB = "1" AND cm.ENTIDAD_RES = "09" AND cm.SEXO = "1"  GROUP BY ALCALDIA ORDER BY mun.CLAVE_MUNICIPIO;',(err,datos3)=>{
+           if(err){
+               res.json(err);
+           }
+           res.json(datos3)
+       });
+   });
+}
+
     module.exports = controller;
