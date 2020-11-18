@@ -1,12 +1,13 @@
 const { request } = require("express");
 const controller={};
 
-controller.list=  (req,res)=>{
+controller.list=(req,res)=>{
     req.getConnection((err,conn)=>{
          conn.query('SELECT * FROM CONTACTO',(err,datos)=>{
             if(err){
                 res.json(err);
             }
+            console.log(datos)
             res.json(datos)
         });
     });
