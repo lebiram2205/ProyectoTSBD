@@ -54,7 +54,7 @@ export class ChartsComponent implements OnInit{
             datosFinales.push(data[i].ENTIDAD)
             etiquetasFinales.push(data[i].CASOS_POSITIVOS_HOMBRES)
           }
-      
+          
           this.randomize(etiquetasFinales,datosFinales);
           });
         }
@@ -93,7 +93,6 @@ export class ChartsComponent implements OnInit{
                   datosFinales.push(data[i].ENTIDAD)
                   etiquetasFinales.push(data[i].MUERTES_POR_COVID)
                 }
-            
                 this.randomize(etiquetasFinales,datosFinales);
                 });
               }
@@ -112,12 +111,32 @@ export class ChartsComponent implements OnInit{
       }
     }
   };
-  public barChartLabels: Label[] = ['Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'];
+
+
+
+  public barChartLabels: Label[] = ['AZCAPOTZALCO', 'COYOACÁN','CUAJIMALPA DE MORELOS','GUSTAVO A. MADERO','IZTACALCO','IZTAPALAPA','LA MAGDALENA CONTRERAS',
+                                    'MILPA ALTA','ÁLVARO OBREGÓN','TLÁHUAC','TLALPAN',
+                                    'XOCHIMILCO','BENITO JUÁREZ','CUAUHTÉMOC','MIGUEL HIDALGO','VENUSTIANO CARRANZA'];
   public barChartType: ChartType = 'bar';
   public barChartLegend = true;
   public barChartData: ChartDataSets[] = [
-    { data: [892420, 989092, 755321, 912970, 922403], label: '2019' },
+    { data: [8075, 9668,4324,17650,6429,20259,5489,3620,11837,7373,12901,8289,5197,7886,5976,7809], label: 'Covid 2019-2020' },
 
+  ];
+
+  public barChartColors = [
+    {
+      backgroundColor: ['rgb(255,195,0,0.8)','rgb(255,195,0,0.8)','rgb(255,195,0,0.8)','rgb(255,195,0,0.8)',
+                        'rgb(255,87,51,0.8)','rgb(255,87,51,0.8)','rgb(255,87,51,0.8)','rgb(255,87,51,0.8)',
+                        'rgb(255,195,0,0.8)','rgb(255,195,0,0.8)','rgb(255,195,0,0.8)','rgb(255,195,0,0.8)',
+                        'rgb(255,87,51,0.8)','rgb(255,87,51,0.8)','rgb(255,87,51,0.8)','rgb(255,87,51,0.8)',
+                        'rgb(255,195,0,0.8)','rgb(255,195,0,0.8)','rgb(255,195,0,0.8)','rgb(255,195,0,0.8)',
+                        'rgb(255,87,51,0.8)','rgb(255,87,51,0.8)','rgb(255,87,51,0.8)','rgb(255,87,51,0.8)',
+                        'rgb(255,195,0,0.8)','rgb(255,195,0,0.8)','rgb(255,195,0,0.8)','rgb(255,195,0,0.8)',
+                        'rgb(255,87,51,0.8)','rgb(255,87,51,0.8)','rgb(255,87,51,0.8)','rgb(255,87,51,0.8)',
+
+                      ],
+    },
   ];
   // events
   public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {
@@ -128,8 +147,11 @@ export class ChartsComponent implements OnInit{
   }
   public randomize(etiquetasFinales,datosFinales): void {
     // Only Change 3 values
+    color: ['rgb(134,51,255)']
     this.barChartData[0].data = etiquetasFinales;
     this.barChartLabels=datosFinales;
+    this.barChartColors[0].backgroundColor[1];
+   
   }
 
 

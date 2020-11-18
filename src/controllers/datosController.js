@@ -163,7 +163,7 @@ controller.casosPositivosA=async (req,res)=>{
 
     req.getConnection((err,conn)=>{
 
-         conn.query('SELECT mun.MUNICIPIO AS ALCALDIA, COUNT(*) AS CASOS_POSITIVOS FROM covid19_mexico cm LEFT JOIN municipios mun ON cm.MUNICIPIO_RES=mun.CLAVE_MUNICIPIO AND CLAVE_ENTIDAD  = "09" WHERE cm.RESULTADO_LAB = "1" AND cm.ENTIDAD_RES = "09" GROUP BY ALCALDIA ORDER BY mun.CLAVE_MUNICIPIO;',(err,datos3)=>{
+         conn.query('SELECT mun.MUNICIPIO AS ALCALDIA, COUNT(*) AS CASOS_POSITIVOS FROM covid19_mexico cm LEFT JOIN municipios mun ON cm.MUNICIPIO_RES=mun.CLAVE_MUNICIPIO AND mun.CLAVE_ENTIDAD  = "09"  WHERE cm.RESULTADO_LAB = "1" AND cm.ENTIDAD_RES = "09" GROUP BY ALCALDIA ORDER BY mun.CLAVE_MUNICIPIO;',(err,datos3)=>{
            if(err){
                res.json(err);
            }
